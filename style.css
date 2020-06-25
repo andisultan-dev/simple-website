@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  color: #00a0d1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* navbar */
+nav {
+  box-sizing: border-box;
+  background-color: #46a28d;
+  box-shadow: 0 5px 8px -1px rgba(0, 0, 0, 0.2);
+}
+
+.brand {
+  font-size: 18px;
+}
+
+.brand,
+nav ul {
+  width: 100%;
+}
+
+nav ul,
+nav li {
+  float: left;
+  position: relative;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  width: 50%;
+  text-align: center;
+}
+
+nav ul::before,
+nav ul::after,
+nav ul > li::before,
+nav ul > li::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 1px;
+}
+
+nav ul::before,
+nav ul > li::before {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+nav ul::after,
+nav ul > li::after {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+nav ul::before {
+  left: 1px;
+}
+nav ul::after {
+  left: 0px;
+}
+nav ul > li::before {
+  right: -2px;
+}
+nav ul > li::after {
+  top: 0;
+  right: -1px;
+}
+
+nav a {
+  display: block;
+  color: #fff;
+  line-height: 23px;
+  padding: 15px 0;
+  height: 50px;
+}
+
+nav a:hover {
+  background-color: #fff;
+  color: #46a28d;
+}
+
+@media only screen and (min-width: 768px) {
+  /* navbar */
+  .brand,
+  nav ul,
+  nav li {
+    width: initial;
+  }
+
+  nav a {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
